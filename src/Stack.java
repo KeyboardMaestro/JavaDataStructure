@@ -16,9 +16,18 @@ public class Stack<T> {
         top = top.next;
         return item;
     }
+
+    private void push(T item){
+        Node<T> t = new Node<T>(item);
+        t.next = top;
+        top = t;
+    }
 }
 class Test {
     public static void main(String[] args) {
-
+        Node firstNode = new Node(1);
+        Node secondNode = new Node(2);
+        firstNode.next = secondNode;
+        System.out.println(firstNode.next.data); // 실행값 : 2
     }
 }
